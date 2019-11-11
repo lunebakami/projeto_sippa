@@ -24,7 +24,7 @@ export default function Login({ history }){
                     history.push('/Admin')
                 }
             }else{
-                console.log(user)
+                console.log('senha incorreta')
             }
         }else{
             console.log('nao existe')

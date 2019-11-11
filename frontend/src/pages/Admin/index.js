@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import api from '../../services/api';
 
 export default function Admin({ history }){
-    const user = localStorage.getItem('user');
 
     function logout(event){
         event.preventDefault();
@@ -20,12 +18,15 @@ export default function Admin({ history }){
                 <Link to="/new_aluno">
                     <button className="btn">Cadastrar Aluno</button>
                 </Link>
-                <Link to="/new_aluno">
+                <br/>
+                <Link to="/new_disc">
                     <button className="btn">Cadastrar Disciplina</button>
                 </Link>
-                <Link to="/new_aluno">
+                <br/>
+                <Link to="">
                     <button className="btn">Matricular Aluno</button>
                 </Link>
+                <br/>
                 
                 <button className='btn' onClick={logout}>Logout</button>
             </div>

@@ -3,15 +3,21 @@ const Subject = require('../models/Subject');
 module.exports = {
     async store(req,res){
         const { cod, name } = req.body;
+        
+        console.log(cod,name);
 
         let subject = await Subject.findOne({ cod });
 
+        console.log(subject);
+
         if(!subject){   
-            const subject = await Subject.create({
+            subject = await Subject.create({
                 cod,
                 name,
             });
         }
+
+        console.log(subject);
 
         return res.json({ subject });
     },

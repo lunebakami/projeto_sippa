@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
 
-export default function Login({ history }){
+export default function CadAluno({ history }){
     const [matricula, setMatricula] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -21,8 +21,13 @@ export default function Login({ history }){
         }
 
         const response = await api.post('/user',data);
+
+        if(response){
+            console.log('Aluno cadastrado');
+        }else{
+            console.log('Aluno não cadastredo');
+        }
         
-        console.log(response);
     }
 
     return (
@@ -58,7 +63,7 @@ export default function Login({ history }){
                 />
                 <br/>
 
-                <button className='btn' type='submit'>Entrar</button>
+                <button className='btn' type='submit'>Cadastrar</button>
                 <button className='backBtn' onClick={back}>Voltar</button>
             </form>
         </>
