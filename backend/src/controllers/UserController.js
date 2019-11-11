@@ -5,9 +5,9 @@ module.exports = {
     async store(req, res){
         const { matricula, name, password, typeUser } = req.body;
 
-        let user = await User.findOne({ matricula });
+        const user = await User.findOne({ matricula });
         if(!user){
-            const user = await User.create({
+            user = await User.create({
                 matricula,
                 name,
                 password,
@@ -19,11 +19,17 @@ module.exports = {
     },
 
     async index(req,res){
-        const { matricula, password } = req.body;
-        console.log(req.body);
+        const { matricula } = req.body;
 
-        let user = await User.findOne({ matricula, password });
+        const user = await User.findOne({matricula});
 
         return res.json({ user });
+
     },
+
+    async show(req, res){
+        const users = await User.find({});
+
+        return res.json(users);
+    }
 }

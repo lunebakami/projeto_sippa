@@ -10,9 +10,10 @@ const routes = express.Router();
 routes.post('/user', UserController.store);
 routes.post('/subject', SubjectController.store);
 routes.post('/enroll', EnrollController.store);
+routes.post('/aut', UserController.index);
 
 //gets
-routes.get('/user', UserController.index);
 routes.get('/subjects', SubjectController.show);
+routes.get('/users', UserController.show);
 
 module.exports = routes;
