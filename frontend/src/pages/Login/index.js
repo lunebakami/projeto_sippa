@@ -16,6 +16,7 @@ export default function Login({ history }){
         if(user){
             if(user.password === password){
                 localStorage.setItem('user_id',user._id);
+                localStorage.setItem('name',user.name);
                 if(user.typeUser === 1){
                     history.push('/home')
                 }else if(user.typeUser === 2){

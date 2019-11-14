@@ -23,7 +23,7 @@ export default function Admin({ history }){
                     <button className="btn">Cadastrar Disciplina</button>
                 </Link>
                 <br/>
-                <Link to="">
+                <Link to="/matricular_aluno">
                     <button className="btn">Matricular Aluno</button>
                 </Link>
                 <br/>

@@ -26,5 +26,13 @@ module.exports = {
         const subjects = await Subject.find({});
 
         return res.json(subjects);
+    },
+
+    async index(req,res){
+        const { cod } = req.body;
+
+        const subject = await Subject.findOne({cod});
+
+        return res.json({subject});
     }
 }
