@@ -1,25 +1,32 @@
-const Enroll = require('../models/Enroll');
+const Enroll = require("../models/Enroll");
 
 module.exports = {
-    async store(req,res){
-        const { user_id, subject_id } = req.body;
+  async store(req, res) {
+    const { user_id, subject_id } = req.body;
 
-        console.log(user_id,subject_id);
+    console.log(user_id, subject_id);
 
-        const enroll = await Enroll.create({
-            user: user_id,
-            subject: subject_id,
-            status: 1
-        });
+    const enroll = await Enroll.create({
+      user: user_id,
+      subject: subject_id,
+      status: 1
+    });
 
-        await enroll.populate('subject').populate('user').execPopulate();
+    await enroll
+      .populate("subject")
+      .populate("user")
+      .execPopulate();
 
-        return res.json(enroll);
-    },
+    return res.json(enroll);
+  },
 
-    async show(req, res){
-        const enroll = await Enroll.find({});
+  async show(req, res) {
+    const { user_id } = req.headers;
 
-        return res.json({enroll});
-    }
+    const enrolls = await Enroll.find({ user: user_id })
+      .populate("subject")
+      .populate("user");
+
+    return res.json(enrolls);
+  }
 };
