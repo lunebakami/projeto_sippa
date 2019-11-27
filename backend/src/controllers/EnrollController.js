@@ -4,8 +4,6 @@ module.exports = {
   async store(req, res) {
     const { user_id, subject_id } = req.body;
 
-    console.log(user_id, subject_id);
-
     const enroll = await Enroll.create({
       user: user_id,
       subject: subject_id,

@@ -4,11 +4,7 @@ module.exports = {
   async store(req, res) {
     const { cod, name } = req.body;
 
-    console.log(cod, name);
-
     let subject = await Subject.findOne({ cod });
-
-    console.log(subject);
 
     if (!subject) {
       subject = await Subject.create({
@@ -16,8 +12,6 @@ module.exports = {
         name
       });
     }
-
-    console.log(subject);
 
     return res.json({ subject });
   },
