@@ -12,9 +12,8 @@ export default function MatriculaaAluno({ history }) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const { cod } = subject;
-
-    const sub_response = await api.post("/sub", cod);
+    const cod = subject;
+    const sub_response = await api.post("/sub", { cod });
 
     const usr_response = await api.post("/aut", { matricula });
 
@@ -29,9 +28,9 @@ export default function MatriculaaAluno({ history }) {
     const response = await api.post("/enroll", data);
 
     if (response) {
-      console.log("Aluno matriculado com sucesso");
+      alert("Aluno matriculado com sucesso");
     } else {
-      console.log("Erro ao matricular aluno");
+      alert("Erro ao matricular aluno");
     }
   }
 

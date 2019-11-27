@@ -20,8 +20,6 @@ export default function Home({ history }) {
           user_id: user
         }
       });
-
-      console.log(response);
       setEnrolls(response.data);
     }
 

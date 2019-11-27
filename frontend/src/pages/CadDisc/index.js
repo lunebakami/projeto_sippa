@@ -17,9 +17,9 @@ export default function CadDisc({ history }) {
     const response = await api.post("/subject", data);
 
     if (response) {
-      console.log("Disciplina cadastrada com sucesso");
+      alert("Disciplina cadastrada com sucesso");
     } else {
-      console.log("Erro ao cadastrar disciplina");
+      alert("Erro ao cadastrar disciplina");
     }
   }
 

@@ -1,71 +1,74 @@
-import React, { useState } from 'react';
-import api from '../../services/api';
+import React, { useState } from "react";
+import api from "../../services/api";
 
-export default function CadAluno({ history }){
-    const [matricula, setMatricula] = useState('');
-    const [password, setPassword] = useState('');
-    const [name, setName] = useState('');
+export default function CadAluno({ history }) {
+  const [matricula, setMatricula] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
-    function back(){
-        history.push('/admin');
+  function back() {
+    history.push("/admin");
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const data = {
+      matricula,
+      name,
+      password,
+      typeUser: "1"
+    };
+
+    const response = await api.post("/user", data);
+
+    if (response) {
+      alert("Aluno cadastrado");
+    } else {
+      alert("Aluno não cadastredo");
     }
+  }
 
-    async function handleSubmit(event){
-        event.preventDefault();
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="matricula">Matricula:</label>
+        <input
+          type="text"
+          id="matricula"
+          placeholder="Insira a matricula do aluno"
+          value={matricula}
+          onChange={event => setMatricula(event.target.value)}
+        />
+        <br />
 
-        const data = {
-            matricula,
-            name,
-            password,
-            typeUser: '1'
-        }
+        <label htmlFor="name">Nome:</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Insira o nome do aluno"
+          value={name}
+          onChange={event => setName(event.target.value)}
+        />
+        <br />
 
-        const response = await api.post('/user',data);
+        <label htmlFor="password">Senha:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="insira a senha do aluno"
+          value={password}
+          onChange={event => setPassword(event.target.value)}
+        />
+        <br />
 
-        if(response){
-            console.log('Aluno cadastrado');
-        }else{
-            console.log('Aluno não cadastredo');
-        }
-        
-    }
-
-    return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="matricula">Matricula:</label>
-                <input 
-                    type="text" 
-                    id="matricula" 
-                    placeholder="Insira a matricula do aluno"
-                    value={matricula}
-                    onChange={ event => setMatricula(event.target.value) }
-                />
-                <br/>
-
-                <label htmlFor="name">Nome:</label>
-                <input 
-                    type="text" 
-                    id="name" 
-                    placeholder="Insira o nome do aluno"
-                    value={name}
-                    onChange={ event => setName(event.target.value) }
-                />
-                <br/>
-
-                <label htmlFor="password">Senha:</label>
-                <input 
-                    type="password" 
-                    id="password" 
-                    placeholder="insira a senha do aluno"
-                    value={password}
-                    onChange={ event => setPassword(event.target.value) }
-                />
-                <br/>
-
-                <button className='btn' type='submit'>Cadastrar</button>
-                <button className='backBtn' onClick={back}>Voltar</button>
-            </form>
-        </>
-    )
+        <button className="btn" type="submit">
+          Cadastrar
+        </button>
+        <button className="backBtn" onClick={back}>
+          Voltar
+        </button>
+      </form>
+    </>
+  );
 }
