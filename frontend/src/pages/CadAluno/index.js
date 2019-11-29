@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import api from "../../services/api";
+import "./styles.css";
 
 export default function CadAluno({ history }) {
   const [matricula, setMatricula] = useState("");

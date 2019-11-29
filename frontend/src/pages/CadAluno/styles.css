@@ -1,0 +1,20 @@
+form {
+  padding: 30px;
+  width: 200px;
+  height: 300px;
+  margin-left: 540px;
+}
+button {
+  margin-left: 12px;
+  margin-top: 12px;
+  background: #add8e6;
+}
+input {
+  width: 200px;
+  height: 25px;
+  background: #add8e6;
+}
+input:hover {
+  padding: 5px;
+  transition: 0.5s;
+}

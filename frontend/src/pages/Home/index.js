@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
+import "./styles.css";
 
 export default function Home({ history }) {
   const name = localStorage.getItem("name");
@@ -28,6 +29,11 @@ export default function Home({ history }) {
 
   return (
     <>
+      <h2>Bem vindo {name}</h2>
+      <button className="btn-admin" onClick={logout}>
+        Logout
+      </button>
+      <br />
       <ul className="enrolls-list">
         {enrolls.map(enroll => (
           <li key={enroll.subject._id}>
@@ -37,11 +43,6 @@ export default function Home({ history }) {
           </li>
         ))}
       </ul>
-
-      <br />
-      <button className="btn" onClick={logout}>
-        Logout
-      </button>
     </>
   );
 }

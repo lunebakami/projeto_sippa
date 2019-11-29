@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 
 * {
   margin: 0;
@@ -7,22 +7,25 @@
   box-sizing: border-box;
 }
 
-html, body, #root{
+html,
+body,
+#root {
   min-height: 100%;
 }
 
-body{
-  background: #000 url('./assets/background.jpg') no-repeat;
+body {
   background-size: cover;
   -webkit-font-smoothing: antialiased !important;
 }
 
-body, input, button{
+body,
+input,
+button {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
 
-.container{
+.container {
   margin: 80px auto;
   max-width: 450px;
   width: 100%;
@@ -31,15 +34,15 @@ body, input, button{
   align-items: center;
 }
 
-.content{
+.content {
   width: 100%;
-  background: #FFF;
+  background: #fff;
   margin-top: 50px;
   border-radius: 4px;
   padding: 30px;
 }
 
-.content > p{
+.content > p {
   font-size: 22px;
   line-height: 30px;
   margin-bottom: 30px;
@@ -50,20 +53,20 @@ body, input, button{
   flex-direction: column;
 }
 
-.content form label{
+.content form label {
   font-size: 14px;
   color: #444;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-.content form label span{
+.content form label span {
   font-weight: normal;
   color: #999;
   font-size: 12px;
 }
 
-.content form input{
+.content form input {
   margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 2px;
@@ -72,7 +75,7 @@ body, input, button{
   font-size: 16px;
 }
 
-.content button.btn{
+.content button.btn {
   border: 0;
   border-radius: 2px;
   width: 100%;
@@ -85,6 +88,6 @@ body, input, button{
   cursor: pointer;
 }
 
-.content button.btn:hover{
+.content button.btn:hover {
   background: #e14f50;
-}  
+}

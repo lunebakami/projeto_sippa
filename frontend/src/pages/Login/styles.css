@@ -1,0 +1,32 @@
+* {
+  color: black;
+  font-size: 15px;
+  font-family: Verdana;
+}
+label,
+h2 {
+  font-size: 25px;
+  text-align: center;
+  font-family: cursive;
+}
+form {
+  padding: 30px;
+  width: 200px;
+  height: 300px;
+  margin-left: 540px;
+}
+.a {
+  height: 30px;
+  background: #add8e6;
+  margin-bottom: 10px;
+}
+input:hover {
+  padding: 5px;
+  transition: 0.5s;
+}
+button {
+  margin-top: 10px;
+  margin-left: 65px;
+  cursor: pointer;
+  background: #add8e6;
+}

@@ -1,0 +1,14 @@
+h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 100px;
+  font-family: cursive;
+}
+.btn-admin {
+  cursor: pointer;
+  height: 40px;
+  width: 200px;
+  margin-top: 30px;
+  margin-left: 570px;
+  background: #add8e6;
+}
